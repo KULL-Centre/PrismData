@@ -104,9 +104,9 @@ Variant data files
 Variant notation
 ----------------
 
-Use: original amino acid, residue number and variant amino acid, e.g. F2Y. Use the original amino acid numbering from
-the source of the experiment, e.g. article or PDB file. Nonsense substitutions (stop codons) are notated with *, synonymous
-substitutions with = and multi-mutants are separated by colons, e.g. A3V:K6=:V10*. If the reference sequence is measured
+Use: original amino acid, residue number and variant amino acid, e.g. `F2Y`. Use the original amino acid numbering from
+the source of the experiment, e.g. article or PDB file. Nonsense substitutions (stop codons) are notated with `*`, synonymous
+substitutions with `=` and multi-mutants are separated by colons, e.g. `A3V:K6=:V10*`. If the reference sequence is measured
 this variant may be named 'WT' in the variant column. A variant can only be listed once.
 
 The aim is to have a simple notation that is close to what many groups already use and with a 1:1 translation to the HGVS
@@ -115,8 +115,8 @@ format.
 Indels
 ------
 
-Single amino acid deletions may be denoted with a ~, e.g. D83~. Insertions may be denoted in a similar way with the number
-giving the new position, e.g. ~83D if an Asp is inserted between the original position 82 and 83. All downstream substitutions
+Single amino acid deletions may be denoted with a `~`, e.g. `D83~`. Insertions may be denoted in a similar way with the number
+giving the new position, e.g. `~83D` if an Asp is inserted between the original position 82 and 83. All downstream substitutions
 should still refer to the original numbering.
 
 Variant header fields
