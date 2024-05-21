@@ -45,6 +45,29 @@ python PrismData.py --merge prism_mave_GAL4_all_conditions.txt  prism_mave/prism
 python PrismData.py -h
 ```
 
+### Using PrismData as a Python module to make a Prism data file
+
+The example below shows how to add a PRISM-style header to a CSV and write a prism data file. 
+
+```
+import PrismData
+import pandas as pd
+
+df = pd.read_csv("your_file.csv", comment="#", delim_whitespace=True)
+
+# The following assumes the CSV file has 3 columns named 'variant', 'score1' and 'score2'
+# and a string variable called 'full_sequence' containing the amino acid sequence mathing the data 
+metadata = {'version':1,
+            'protein':{'name':'protein', 'sequence':full_sequence},
+            'method':{'name':'method', 'doi':'dx.doi.org/...'},
+            'columns':{'score1':'Description of first score', 'score2':'Description of second score'}}
+prismdata = PrismData.VariantData(metadata=metadata, dataframe=df)
+prismdata.check()
+
+pp = PrismData.PrismParser()
+pp.write("prism_method_protein.txt", prismdata)
+```
+
 General data file format
 ========================
 
