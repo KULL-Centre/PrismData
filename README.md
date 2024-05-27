@@ -53,6 +53,7 @@ The example below shows how to add a PRISM-style header to a CSV and write a pri
 import PrismData
 import pandas as pd
 
+# if data frame is sub sampled, remember to do reset row indeices, e.g. df.reset_index(drop=True)
 df = pd.read_csv("your_file.csv", comment="#", delim_whitespace=True)
 
 # The following assumes the CSV file has 3 columns named 'variant', 'score1' and 'score2'
